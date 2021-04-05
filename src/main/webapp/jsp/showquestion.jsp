@@ -1,28 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
- 
- <%@ page import="java.util.ArrayList" %>   
- <%@ page import="data.Question" %>  
- <%@ page import="dao.Dao" %> 
- <%@ page import="app.ShowQuestion" %>
- 
-    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-   
-    
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>Answer the questions</title>
-
-
-
-<link rel="stylesheet" type="text/css" href="koodit.css">
-<script src="jsp/myscriptfile.js"></script>
-
-</head>
-<body>
-<%@ include file="../html/somehtml.html" %>
+<%@ include file="../header.html" %>
 <h2>Answer the questions</h2><br><br>
 <ol>
 
@@ -92,14 +68,4 @@
 </ol>
 
 
-<br></br>
-
-
-
-
-
-
-
-
-</body>
-</html>
+<%@ include file="../footer.html" %>
