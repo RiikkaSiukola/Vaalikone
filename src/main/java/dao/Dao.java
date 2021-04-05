@@ -8,6 +8,7 @@ import java.sql.Statement;
 import java.util.ArrayList;
 
 import data.Candidates;
+import data.Question;
 
 import java.sql.Connection;
 
@@ -72,6 +73,27 @@ public class Dao {
 			}
 			return list;
 		} catch (SQLException e) {
+			return null;
+		}
+	}
+	
+	
+	public ArrayList<Question> readAllQuestion() {
+		ArrayList<Question> list=new ArrayList<>();
+		try {
+			Statement stmt=conn.createStatement();
+			ResultSet RS=stmt.executeQuery("select * from kysymykset");
+			System.out.println("kysymysarray");
+			while (RS.next()){
+				Question f=new Question();
+				f.setId(RS.getInt("KYSYMYS_ID"));
+				f.setWhatquestion(RS.getString("KYSYMYS"));
+				list.add(f);
+				System.out.println("kysymysarrayhin lisätty kysymykset");
+			}
+			return list;
+		}
+		catch(SQLException e) {
 			return null;
 		}
 	}
